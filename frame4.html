@@ -264,10 +264,15 @@
             const parentRow = item.parentElement; // Identifikasi baris induk
             const items = parentRow.querySelectorAll('.accordion-item'); // Hanya elemen dalam baris yang sama
             const isActive = item.classList.contains('active');
+            const firstImage = items[0]; // Gambar 1
+            const secondImage = items[1]; // Gambar 1
+            const thirdImage = items[2]; // Gambar 1
+            const fourthImage = items[3]; // Gambar 1
 
             // Reset semua item dalam baris tersebut
             items.forEach(i => {
                 i.classList.remove('active', 'active-left', 'active-right', 'hide-left', 'hide-right', 'center');
+                i.style.transform = ''; // Reset transformasi untuk semua gambar
             });
 
             // Jika item sedang aktif, kembalikan ke posisi awal
@@ -277,23 +282,42 @@
             if (direction === 'left') {
                 // Jika gambar di kiri
                 item.classList.add('active', 'active-left');
+
+                // Untuk Gambar 2 (di sisi kiri), kita pindahkan ke posisi Gambar 1
+                if (item === items[1]) {
+                    // Tempatkan Gambar 2 di posisi Gambar 1
+                    item.style.transform = `translateX(${firstImage.offsetLeft - item.offsetLeft}px)`;
+                    firstImage.style.transform = `translateX(${firstImage.offsetLeft - secondImage.offsetLeft}px)`
+                    thirdImage.style.transform = `translateX(${fourthImage.offsetLeft - thirdImage.offsetLeft}px)`
+                    fourthImage.style.transform = `translateX(${firstImage.offsetLeft + 160}px)`
+                }
+
                 items.forEach(i => {
                     if (i !== item) {
-                        // Gambar di sisi lain bergeser keluar
                         i.classList.add(i.offsetLeft < item.offsetLeft ? 'hide-left' : 'hide-right');
                     }
                 });
             } else if (direction === 'right') {
                 // Jika gambar di kanan
                 item.classList.add('active', 'active-right');
+
+                // Untuk Gambar 2 (di sisi kanan), kita pindahkan ke posisi Gambar 1
+                if (item === items[2]) {
+                    // Tempatkan Gambar 3 di posisi Gambar 4
+                    item.style.transform = `translateX(${fourthImage.offsetLeft - item.offsetLeft}px)`;
+                    secondImage.style.transform = `translateX(${firstImage.offsetLeft - secondImage.offsetLeft}px)`
+                    firstImage.style.transform = `translateX(${firstImage.offsetLeft - secondImage.offsetLeft}px)`
+                    fourthImage.style.transform = `translateX(${firstImage.offsetLeft + 160}px)`
+                }
+
                 items.forEach(i => {
                     if (i !== item) {
-                        // Gambar di sisi lain bergeser keluar
                         i.classList.add(i.offsetLeft > item.offsetLeft ? 'hide-right' : 'hide-left');
                     }
                 });
             }
         }
+
     </script>
 </body>
 </html>

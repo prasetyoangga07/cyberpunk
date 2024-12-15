@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame 3</title>
+    <style>
+
+      @font-face {
+        font-family: "Montserrat-Medium";
+        src:url(font/Montserrat-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat-Bold";
+        src:url(font/Montserrat-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat-ExtraBold";
+        src:url(font/Montserrat-ExtraBold.ttf);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('images/frame3.png');
+        background-size: cover;
+        background-position: center;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+      }
+      .content {
+        width: 100%;
+        height: 80vh;
+      }
+      .welcome-text {
+        position: absolute;
+        top: 20px;
+        left: 40px;
+        text-align: left;
+        font-family: "Montserrat-Medium";
+        color: #FFFFFF;
+        width: 700px;
+        height: auto;
+        font-size: 12px;
+        text-shadow: 3px 3px 3px #313030;
+      }
+      .welcome-text h1 {
+        font-size: 42px;
+        font-family: "Montserrat-ExtraBold";
+        text-shadow: 4px 4px 3px #313030;
+      }
+      .video-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 40px;
+        display: flex;
+      }
+
+      .video-container iframe {
+        width: 28%;
+        height: 170px;
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+
+      .teks {
+        text-align: left;
+        font-family: "Montserrat-Medium";
+        color: #FFFFFF;
+        width: 60%;
+        height: auto;
+        font-size: 12px;
+        text-shadow: 3px 3px 3px #313030;
+        margin-top: 60px;
+      }
+
+      .teks h2 {
+        font-size: 24px;
+        font-family: "Montserrat-ExtraBold";
+        text-shadow: 4px 4px 3px #313030;
+      }
+
+      button {
+        cursor: pointer;
+        position: absolute;
+        margin: 40px;
+        bottom: 0px;
+        font-family: "Montserrat-ExtraBold";
+        width: 120px;
+        height: 40px;
+        right: 20px;
+        border-radius: 10px;
+        border: 2px solid #FFFFFF;
+        color: #FFFFFF;
+        background: rgba(7, 0, 0, 0.664);
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+
+      button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+      }
+
+
+    </style>
+</head>
+<body>
+    <!-- <img src="images/frame3.png" alt="Cyberpunk kota" class="frame"> -->
+    <div class="content">
+        <div class="welcome-text">
+            <h1>STORY</h1>
+            <p>In a future world filled with advanced technology and social chaos, "Cyberpunk" takes players to a futuristic city called Night City. The city is known as a hub of cutting-edge technology, with glittering neon, towering skyscrapers and danger around every corner. However, behind the luxury of technology, there is enormous social inequality, where large corporations control everything, and lower class citizens struggle to survive.<br><br>
+
+                Players take on the role of V, a mercenary with abilities that can be enhanced through cyberware implantation. In his quest for wealth and fame, V is drawn into a major conflict when he discovers a revolutionary biochip that can change the fate of the world. However, the biochip contains the consciousness of a criminal legend, Johnny Silverhand, who has an agenda for revenge against the corporation that ruined his life.<br><br>
+                
+                Through a branching story, players face difficult moral choices, undertake dangerous missions, and form alliances with various factions such as nomads in the barren desert, expert netrunners in cyberspace, and menacing street gangs.<br><br>
+                
+                On this journey, V must question his identity, determine who to trust, and choose between personal freedom and greater change for the world. With captivating graphics, immersive gameplay and an intriguing storyline, "Cyberpunk" offers an evocative and challenging experience, highlighting themes of ambition, power and what it means to be human in the era of transhumanism.</p>
+            </div>
+        </div>
+    </div>
+        <div class="video-container">
+            <iframe width="100%" height="200" 
+                src="https://www.youtube.com/embed/7u1kv62UFOE?autoplay=1" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+            <div class="teks">
+                <h2>WATCH IN FULL</h2>
+                <p>You can also see the explanation in the following video.</p>
+            </div>
+            <button class="back">BACK</button>
+        </div>          
+</body>
+</html>

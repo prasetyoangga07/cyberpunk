@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Gameplay</title>
+    <style>
+      @font-face {
+        font-family: "Montserrat-Medium";
+        src: url(font/Montserrat-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat-Bold";
+        src: url(font/Montserrat-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat-ExtraBold";
+        src: url(font/Montserrat-ExtraBold.ttf);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #111C97;
+        color: white;
+        font-family: "Montserrat-Medium";
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .elips {
+        width: 700px;
+        height: 550px;
+        background: linear-gradient(360deg, #BD00FF 38.39%, #00B8FF 66.01%);
+        border-radius: 50%;
+        position: fixed;
+        right: -8%;
+        bottom: -9%;
+        filter: blur(100px);
+        opacity: 80%;
+        z-index: -1;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        width: 100%;
+        background: transparent;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-buttons {
+        display: flex;
+        gap: 30px;
+        position: absolute;
+        right: 30px;
+        top: 20px;
+
+      }
+
+      .nav-buttons a {
+        text-decoration: none;
+        color: white;
+        font-family: "Montserrat-Bold";
+        border-radius: 10px;
+        padding: 10px 20px;
+        border: 1px solid #FFFFFF;
+        transition: all 0.3s ease;
+      }
+
+      .nav-buttons a:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+      }
+
+      a {
+        color: #FFFFFF;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #FFFFFF;
+        text-decoration: none;
+      }
+
+      .arrow-button {
+        position: fixed;
+        top: 20px; 
+        left: 40px; 
+        width: 50px; 
+        height: 30px;
+        background-color: #ffffff; 
+        clip-path: polygon(0% 50%, 50% 0%, 50% 35%, 100% 35%, 100% 65%, 50% 65%, 50% 100%);
+      }
+
+      .judul {
+        position: absolute;
+        top: 70px; 
+        left: 180px;
+        transform: translateX(-50%);
+        font-size: 40px;
+        font-family: "Montserrat-ExtraBold";
+        color: #FFFFFF;
+        text-shadow: 3px 3px 3px #313030;
+        z-index: 1;
+      }
+
+      .container1 {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        margin-top: 110px;
+        left: 10px;
+      }
+
+      .container1 img {
+        width: 45%;
+        height: 90%;
+      }
+      
+      .teks1 {
+        margin-left: 30px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        width: 50%;
+        font-size: 15px;
+        line-height: 1.5;
+        color: #FFFFFF;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .container2 {
+        text-align: center;
+        margin-top: 20px;
+        padding: 20px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+        font-family: "Montserrat-Medium";
+        font-size: 15px;
+        color: #FFFFFF;
+      }
+
+      footer {
+        padding: 0px;
+        background: #050D65;
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Montserrat-Bold";
+        font-size: 14px;
+        text-align: center;
+      }
+      
+    </style>
+</head>
+<body>
+    <div class="arrow-button"></div>
+    <div class="elips"></div>
+    <div class="judul">
+        <p>GAMEPLAY</p>
+    </div>
+    <header>
+        <div class="nav-buttons">
+            <a href="#">Home</a>
+            <a href="logout.html">Logout</a>
+        </div>
+    </header>
+    
+    <div class="container1">
+        <img src="images/Cyberpunk207.png" alt="Cyberpunk Gameplay">
+        <div class="teks1">
+            <p>Invest in a variety of skills and perks to build a playstyle that fits your character. Use upgradeable weapons, hacking skills, and body-enhancing implants to become the best hired gun in town. Engage in guns-blazing combat, strike down enemies from a distance, or stealth your way through carefully guarded locations.</p>
+            <div class="container2">
+                <p>You can play the game by downloading the following link:<br> <a href="https://www.cyberpunk.net" target="_blank">https://www.cyberpunk.net</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>praktikum-pemweb-cyberpunk @ifunsoed23</p>
+    </footer>
+</body>
+</html>

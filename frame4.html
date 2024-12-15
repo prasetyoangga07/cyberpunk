@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Logic</title>
+    <style>
+        @font-face {
+            font-family: "Montserrat-Medium";
+            src: url(font/Montserrat-Medium.ttf);
+        }
+        @font-face {
+            font-family: "Montserrat-Bold";
+            src: url(font/Montserrat-Bold.ttf);
+        }
+        @font-face {
+            font-family: "Montserrat-ExtraBold";
+            src: url(font/Montserrat-ExtraBold.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            background: linear-gradient(#0D1FE0, #000000);
+            color: white;
+            width: 100vw;
+            height: 100vh;
+            font-family: "Montserrat-Medium";
+        }
+
+        .elips {
+            width: 560px;
+            height: 550px;
+            background: linear-gradient(360deg, #BD00FF 38.39%, #00B8FF 66.01%);
+            border-radius: 50%;
+            position: absolute;
+            right: 20%;
+            filter: blur(90px);
+            z-index: -1;
+        }
+
+        .images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/tekstur.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        .judul {
+            padding: 20px;
+            margin-bottom: 20px;
+            font-family: "Montserrat-ExtraBold";
+            font-size: 30px;
+            color: #ffff;
+            text-shadow: 3px 3px 3px #313030;
+            text-align: center;
+        }
+
+        .accordion-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .accordion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .accordion-item {
+            position: relative;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+        
+        .accordion-item h3 {
+            position: absolute;
+            bottom: 10px; /* Sesuaikan nilai bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 15px;
+            color: white;
+            text-shadow: 3px 3px 3px #313030;
+            white-space: nowrap; /* Tambahkan kode ini */
+            overflow: hidden; /* Tambahkan kode ini */
+            text-overflow: ellipsis; /* Tambahkan kode ini */
+        }
+
+        .accordion-item img {
+            width: 250px;
+            height: 225px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .content {
+            width: 50vw;
+            height: 225px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+            background: rgba(7, 0, 0, 0.731);
+            border-radius: 5px;
+            color: #ffff;
+            padding: 20px;
+            font-size: 14px;
+            z-index: -1;
+        }
+
+        .content, .b {
+            align-items: center;
+            text-align: right;
+            padding-right: 60px;
+
+        }
+        .content, .a {
+            text-align: left;
+            padding-left: 60px;
+        }
+
+
+        .accordion-item.active .content {
+            display: block;
+        }
+
+        .accordion-item.active-left .content {
+            left: 150px;
+        }
+
+        .accordion-item.active-right .content {
+            right: 150px;
+        }
+
+        .accordion-item:not(.active).hide-left {
+            transform: translateX(-215%);
+        }
+
+        .accordion-item:not(.active).hide-right {
+            transform: translateX(215%);
+        }
+
+        .accordion-item:not(.active).center {
+            transform: translateX(0);
+        }
+        .arrow-button {
+            position: fixed;
+            top: 30px; 
+            left: 30px; 
+            width: 55px; 
+            height: 30px;
+            background-color: #ffffff; 
+            clip-path: polygon(0% 50%, 50% 0%, 50% 35%, 100% 35%, 100% 65%, 50% 65%, 50% 100%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="images"></div>
+    <div class="elips"></div>
+    <div class="judul">
+        TOP 8 CHARACTERS
+    </div>
+    <div class="accordion-container">
+        <div class="accordion">
+            <!-- Gambar 1 -->
+            <div class="accordion-item" onclick="toggleAccordion(this, 'left')">
+                <img src="images/v.png" alt="Image 1">
+                <h3>V</h3>
+                <div class="content"> 
+                    <p class="a"><b>V</b> is the customizable protagonist of Cyberpunk 2077, a mercenary navigating the vibrant and dangerous streets of Night City.<br>
+                     Players shape V's backstory (Nomad, Streetkid, or Corpo), skills, and choices, which significantly impact the game's narrative and relationships. Equipped with cybernetic enhancements, V becomes entangled in a high-stakes quest involving the enigmatic Relic chip and the rebellious rockerboy, Johnny Silverhand. V’s journey is defined by ambition, survival, and the moral complexities of living in a dystopian, tech-driven world.</p>
+                </div>
+            </div>
+            <!-- Gambar 2 -->
+            <div class="accordion-item" onclick="toggleAccordion(this, 'left')">
+                <img src="images/jackie.png" alt="Image 2">
+                <h3>Jackie Welles</h3>
+                <div class="content">
+                    <p class="a"><b>Jackie Welles</b> is a loyal and charismatic mercenary in Cyberpunk 2077, and one of V's closest friends and allies. <br>
+                        A former gangster, Jackie dreams of leaving a mark on Night City and building a better life for himself and his loved ones. Known for his warm personality and fierce combat skills, Jackie is deeply principled, valuing loyalty and honor above all else. His role in V's journey is pivotal, as he helps set the stage for the high-stakes events that follow, making him a memorable and beloved character in the game.</p>
+                </div>
+            </div>
+            <!-- Gambar 3 -->
+            <div class="accordion-item" onclick="toggleAccordion(this, 'right')">
+                <img src="images/song.png" alt="Image 3">
+                <h3>Song So Mi</h3>
+                <div class="content">
+                    <p class="b"><b>Song So Mi,</b> also known as "Songbird," is a talented and enigmatic character introduced in the Cyberpunk 2077: <br>
+                        Phantom Liberty expansion. She serves as a skilled Netrunner and plays a key role in the covert operations tied to the new narrative. Songbird is highly intelligent, resourceful, and shrouded in mystery, often operating from the shadows to achieve her objectives. Her complex motivations and deep involvement in the unfolding espionage intrigue make her a compelling figure in the expansion’s high-stakes storyline.</p>
+                </div>
+            </div>
+            <!-- Gambar 4 -->
+            <div class="accordion-item" onclick="toggleAccordion(this, 'right')">
+                <img src="images/viktor.png" alt="Image 4">
+                <h3>Viktor Vector</h3>
+                <div class="content">
+                    <p class="b"><b>Viktor Vector</b> is a skilled and trustworthy ripperdoc in Cyberpunk 2077, known for providing high-quality cyberware upgrades to the people of Night City. A former professional boxer, Viktor has a gruff yet warm demeanor and acts as a mentor and friend to V. Operating from his clinic in Watson, he offers valuable advice and medical assistance, often prioritizing care over profit. Viktor’s grounded personality and genuine concern for others make him one of the most dependable allies in the game’s chaotic world.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <!-- Gambar 5 -->
+            <div class="accordion-item" onclick="toggleAccordion(this, 'left')">
+                <img src="images/judy.png" alt="Image 5">
+                <h3>Judy Alvares</h3>
+                <div class="content"> 
+                    <p class="a"><b>Judy Alvarez</b> is a talented braindance technician and a key character in Cyberpunk 2077. Passionate and idealistic, she works at Lizzie's Bar in Night City, using her expertise to create immersive virtual experiences. <br>
+                        Judy is deeply empathetic and driven by a desire to help those who have been exploited, particularly women and marginalized groups. She becomes a close ally to V and plays a significant role in several story arcs, offering not only her technical skills but also heartfelt support. Her strong principles and caring nature make her one of the game’s most memorable characters.</p>
+                </div>
+            </div>
+            <!-- Gambar 6 -->
+            <div class="accordion-item" onclick="toggleAccordion(this, 'left')">
+                <img src="images/goro.png" alt="Image 6">
+                <h3>Goro Takemura</h3>
+                <div class="content">
+                    <p class="a"><b>Goro Takemura</b> is a disciplined and honorable former bodyguard in Cyberpunk 2077. Once a loyal servant of the Arasaka Corporation, he becomes a fugitive after being framed for betrayal following the death of Saburo Arasaka. Takemura is highly skilled, pragmatic, and driven by a sense of duty and justice, often wrestling with his loyalty to Arasaka and his personal values. He forms a reluctant alliance with V to uncover the truth, offering both combat prowess and strategic insights. Despite his stoic exterior, Takemura’s deep sense of honor and moral struggle make him a complex and compelling character.</p>
+                </div>
+            </div>
+            <!-- Gambar 7 -->
+            <div class="accordion-item" onclick="toggleAccordion(this, 'right')">
+                <img src="images/johnny.png" alt="Image 7">
+                <h3>Johnny Silverhand</h3>
+                <div class="content">
+                   <p class="b"><b>Johnny Silverhand</b> is a rebellious and iconic character in Cyberpunk 2077, portrayed by Keanu Reeves. A former rockstar and anti-corporate activist, Johnny was infamous for his defiance of the Arasaka Corporation and his larger-than-life personality. Decades after his death, his digital engram becomes embedded in V’s mind through the Relic chip, creating a complex and often confrontational relationship. Johnny is brash, charismatic, and fiercely independent, but beneath his tough exterior lies a tragic past and a deep-seated desire to fight for freedom. His presence adds layers of conflict, humor, and emotional depth to the game’s narrative.</p>
+                </div>
+            </div>
+            <!-- Gambar 8 -->
+            <div class="accordion-item" onclick="toggleAccordion(this, 'right')">
+                <img src="images/evelyn.png" alt="Image 8">
+                <h3>Evelyn Parker</h3>
+                <div class="content">
+                    <p class="b"><b>Evelyn Parker</b> is a sophisticated and ambitious character in Cyberpunk 2077. An experienced and resourceful fixer, she hires V and their crew to steal the Relic, setting the game’s central plot in motion. Evelyn is charming and determined, but her pursuit of independence and a better life places her in dangerous situations. Beneath her confident exterior, she hides vulnerability and a troubled past. Her story is marked by tragedy, serving as a poignant reminder of the harsh realities and exploitative nature of Night City’s underworld.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="arrow-button"></div>
+
+
+    <script>
+        function toggleAccordion(item, direction) {
+            const parentRow = item.parentElement; // Identifikasi baris induk
+            const items = parentRow.querySelectorAll('.accordion-item'); // Hanya elemen dalam baris yang sama
+            const isActive = item.classList.contains('active');
+
+            // Reset semua item dalam baris tersebut
+            items.forEach(i => {
+                i.classList.remove('active', 'active-left', 'active-right', 'hide-left', 'hide-right', 'center');
+            });
+
+            // Jika item sedang aktif, kembalikan ke posisi awal
+            if (isActive) return;
+
+            // Tentukan logika berdasarkan sisi gambar yang diklik
+            if (direction === 'left') {
+                // Jika gambar di kiri
+                item.classList.add('active', 'active-left');
+                items.forEach(i => {
+                    if (i !== item) {
+                        // Gambar di sisi lain bergeser keluar
+                        i.classList.add(i.offsetLeft < item.offsetLeft ? 'hide-left' : 'hide-right');
+                    }
+                });
+            } else if (direction === 'right') {
+                // Jika gambar di kanan
+                item.classList.add('active', 'active-right');
+                items.forEach(i => {
+                    if (i !== item) {
+                        // Gambar di sisi lain bergeser keluar
+                        i.classList.add(i.offsetLeft > item.offsetLeft ? 'hide-right' : 'hide-left');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk 2077</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @font-face {
+            font-family: "Montserrat-Medium";
+            src:url(font/Montserrat-Medium.ttf);
+        }
+        @font-face {
+            font-family: "Montserrat-Bold";
+            src:url(font/Montserrat-Bold.ttf);
+        }
+        @font-face {
+            font-family: "Montserrat-ExtraBold";
+            src:url(font/Montserrat-ExtraBold.ttf);
+        }
+        .struktur {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('images/tekstur.png');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="elips"></div>
+    <div class="struktur"></div>
+    <div class="images">
+        <img src="images/logo.png" alt="Cyberpunk Logo" class="logo-index">
+        <img src="images/karakter.png" alt="Cyberpunk Character" class="character-index">
+    </div>
+    <div class="content-index">
+        <div class="welcome-text">
+            <p><b>Hi,</b> Selamat datang di rumah baru kami</p>
+            <p>Buatlah pengalaman terbaik di sini!</p>
+            <p>Silahkan gunakan menu <b>login</b> jika Anda sudah mempunyai akun,<br>
+               atau gunakan menu <b>create account</b> untuk membuat user baru.</p>
+        </div>
+        <div class="buttons">
+            <button class="login btn-animate" onclick="goToLogin()">LOGIN</button>
+            <button class="create-account btn-animate" onclick="goToCreateAccount()">BUAT AKUN</button>
+        </div>
+    </div>
+    <script>
+        
+        function goToLogin() {
+            window.location.href = "login.html"; 
+        }
+
+       
+        function goToCreateAccount() {
+            window.location.href = "create.html";
+        }
+    </script>
+</body>
+</html>

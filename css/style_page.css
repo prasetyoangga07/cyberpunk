@@ -1,0 +1,308 @@
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url('font/Montserrat-Bold.ttf');
+}
+@font-face {
+    font-family: "Montserrat-ExtraBold";
+    src: url('font/Montserrat-ExtraBold.ttf');
+}
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url('font/Montserrat-Medium.ttf');
+}
+
+
+body {
+    margin: 0;
+    font-family: "Montserrat-Medium";
+    background: linear-gradient(180deg, #000428, #004e92);
+    color: white;
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background: linear-gradient(#1c2359, #010426, #000000);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+header.scrolled {
+    background: transparent;
+}
+
+.gif img {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    z-index: -1;
+}
+
+.logo img {
+    width: 25%; 
+    height: 25%;
+    margin-top: -20px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-top: -20px;
+
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: "Montserrat-Bold";
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid #FFFFFF;
+}
+
+.nav-buttons a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.hero {
+    text-align: left;
+    position: absolute;
+    bottom: 30px;
+    left: 20%;
+    transform: translateX(-50%);
+    height: auto;
+    font-size: 18px;
+}
+.hero h1{
+    margin-bottom: 0%;
+    font-family: "Montserrat-Bold";
+    font-size: 30px;
+}
+.hero p{
+    margin-top: 0%;
+}
+.elips-content {
+    position: absolute;
+    top: 700px; /* Sesuaikan nilai top */
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(360deg, #BD00FF 38.39%, #00B8FF 66.01%);
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 1;
+    z-index: -1;
+}
+
+.elips-form {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(360deg, #BD00FF 38.39%, #00B8FF 66.01%);
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 1;
+    z-index: -1;
+}
+
+
+.content-section {
+    padding: 50px 0px;
+    text-align: left;
+}
+
+.content-title h2{
+    font-family: "Montserrat-Bold";
+    font-size: 24px;
+    margin-bottom: 0%;
+}
+.content-title p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.content-title {
+    margin-left: 25px;
+    text-shadow: 3px 3px 3px #313030;
+}
+
+.content-section .grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    scroll-behavior: smooth;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.card-container {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.card {
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 0 0 200px; 
+    margin: 0px;
+    transform: rotateY(20deg) scale(0.8);
+    transition: transform 0.5s;
+}
+
+
+.card img {
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+.card-container::-webkit-scrollbar { /* Chrome, Safari, Opera */
+    display: none;
+}
+.card-container {
+    cursor: grab;
+}
+
+.card-container:active {
+    cursor: grabbing;
+}
+
+
+.card:hover {
+    transform: rotateY(0deg) scale(0.9);
+}
+
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+.form-title {
+    font-family: "Montserrat-Bold";
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 21px;
+    text-shadow: 3px 3px 3px #313030;
+}
+
+
+.form-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.form-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group select {
+    appearance: none;
+    background-color: white;
+}
+
+.form-container button {
+    background: rgba(7, 0, 0, 0.402);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #FFFFFF;
+    transition: background 0.3s;
+    margin-left: 80%; 
+    margin-top: 5%;
+}
+.form-section {
+    position: relative;
+    padding-bottom: 10px; /* tambahkan padding bottom */
+}
+
+.form-container button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.form-group-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Jarak antar form group */
+}
+
+.form-group {
+    flex-basis: 45%; /* Ukuran lebar form group _/
+    background: rgba(255, 255, 255, 0.05); /_ Latar belakang form group _/
+    padding: 10px; /_ Jarak dalam form group _/
+    border-radius: 5px; /_ Sudut bulat form group _/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /_ Bayangan form group */
+}
+
+footer {
+    position: relative;
+    margin-top: 70px;
+    background: #050D65;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat-Bold";
+    font-size: 14px;
+    text-align: center;
+}
+

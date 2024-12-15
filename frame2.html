@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame 2</title>
+    <style>
+        @font-face {
+            font-family: "Montserrat-Medium";
+            src:url(font/Montserrat-Medium.ttf);
+        }
+        @font-face {
+            font-family: "Montserrat-Bold";
+            src:url(font/Montserrat-Bold.ttf);
+        }
+        @font-face {
+            font-family: "Montserrat-ExtraBold";
+            src:url(font/Montserrat-ExtraBold.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(8, 8, 95, 0.922); 
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+        }
+        .frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(1.5px);
+
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background: rgba(7, 0, 0, 0.731);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 350px;
+            top: 50%;
+            left: 50%; 
+            font-size: 16px;
+            font-family: "Montserrat-Medium";
+            color: #FFFFFF; /* Warna teks */
+        }
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        button {
+            cursor: pointer;
+            position: absolute;
+            margin: 55px;
+            font-family: "Montserrat-ExtraBold";
+            width: 120px;
+            height: 40px;
+            right: 20px;
+            border-radius: 10px;
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            background: rgba(7, 0, 0, 0.664);
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <img src="images/frame2.png" alt="Cyberpunk kota" class="frame">
+    <div class="content">
+        <div class="welcome-text">
+            <p>
+                            <b>Introducing Update 2.1,</b><br>
+            now available for Xbox Series X|S, PlayStation 5, and PC!<br>
+            Experience Cyberpunk 2077 in new ways — hop on the fully functional<br>
+            NCART metro system, listen to preem tunes as you explore the streets<br>
+            thanks to the Radioport, or invite your chosen partner to V's apartment<br>
+            to hangout and spend some time together.<br>
+            hese features and more — including new vehicles and mechanics,<br>
+            secrets to discover and technical tweaks — await you in Night City!<br>
+            </p>
+            <button class="confirm">CONFIRM</button>
+        </div>
+    </div>
+</body>
+</html>

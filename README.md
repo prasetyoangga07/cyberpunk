@@ -5,7 +5,7 @@ Ini adalah tugas Praktikum Pemrograman Web Informatika Unsoed
 ## Team
 
 - UI/UX : [Prasetyo Angga](https://github.com/prasetyoangga07)
-- Front End : [Nisa Izzatul Maimunah](https://github.com/nsaizza29)
+- Front End : [Nisa Izzatul Ummah](https://github.com/nsaizza29)
 - Back End : [Anas Sholihin](https://github.com/anasshin)
 
 ## Source

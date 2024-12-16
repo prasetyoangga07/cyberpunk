@@ -103,8 +103,14 @@
         height: 30px;
         background-color: #ffffff; 
         clip-path: polygon(0% 50%, 50% 0%, 50% 35%, 100% 35%, 100% 65%, 50% 65%, 50% 100%);
+        transition: transform 0.2s ease, background-color 0.2s ease;
       }
 
+        .arrow-button:active {
+            transform: scale(1.2); 
+            background-color: #ffffff5b; 
+        }
+        
       .judul {
         position: absolute;
         top: 70px; 
@@ -171,14 +177,14 @@
     </style>
 </head>
 <body>
-    <div class="arrow-button"></div>
+    <div class="arrow-button" onclick="navigateTo('frame1.html')"></div>
     <div class="elips"></div>
     <div class="judul">
         <p>GAMEPLAY</p>
     </div>
     <header>
         <div class="nav-buttons">
-            <a href="#">Home</a>
+             <a href="frame1.html">Home</a>
             <a href="logout.html">Logout</a>
         </div>
     </header>
@@ -196,5 +202,10 @@
     <footer>
         <p>praktikum-pemweb-cyberpunk @ifunsoed23</p>
     </footer>
+     <script>
+      function navigateTo(url) {
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>

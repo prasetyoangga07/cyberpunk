@@ -257,12 +257,13 @@ header.scrolled {
 }
 
 .form-container button {
+    font-family: "Montserrat-Bold";
     background: rgba(7, 0, 0, 0.402);
     border: none;
     color: white;
     padding: 10px 20px;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     border: 1px solid #FFFFFF;
     transition: background 0.3s;

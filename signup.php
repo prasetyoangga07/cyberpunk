@@ -1,6 +1,8 @@
 <?php
 include './backend/config.php';
 
+$error_message = '';
+
 if (isset($_POST['signup'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -95,18 +97,18 @@ function checkUsername($username)
             <div class="input-group">
                 <label for="username">Username</label>
                 <span class="icon"><i class="fa-solid fa-user"></i></span>
-                <input type="text" name="username">
+                <input type="text" name="username" placeholder="Masukan Username">
             </div>
             <div class="input-group">
                 <label for="username">Email</label>
                 <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                <input type="email" name="email">
+                <input type="email" name="email" placeholder="Email@email.com">
             </div>
             <div class="input-group">
                 <label for="username">Password</label>
                 <span class="icon"><i class="fa-solid fa-lock"></i></span>
                 <span class="icon2"><i class="fa-solid fa-eye"></i></span>
-                <input type="password" name="password">
+                <input type="password" name="password" placeholder="Masukan Password">
             </div>
             <div>
                 <?php if (!empty($error_message)): ?>

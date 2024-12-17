@@ -32,7 +32,10 @@ body {
     margin: 0;
     font-family: "Montserrat-Medium";
 }
-
+.warning {
+    color: red;
+    font-size: 8px;
+}
 .elips {
     width: 560px;  /* Tentukan lebar yang tetap */
     height: 550px; /* Tentukan tinggi yang tetap */
@@ -54,7 +57,11 @@ body {
     cursor: pointer;
     margin-top: 55px;
 }
-button {
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+button,input[type='submit'] {
     font-family: "Montserrat-ExtraBold";
     width: 138px;
     height: 50px;
@@ -66,7 +73,7 @@ button {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
+button:hover, input[type='submit']:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
 }
@@ -90,6 +97,12 @@ p {
     font-size: 15px;
 }
 
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #FFFFFF;
+}
+
 .input-group input {
     width: 100%;
     padding: 10px 10px 10px 35px;
@@ -103,6 +116,7 @@ p {
 
 .input-group .icon {
     position: absolute;
+    margin-top: 4px;
     top: 50%;
     left: 15px;
     color: #FFFFFF;
@@ -165,6 +179,7 @@ h2{
     opacity: 80%;
     left: 0px;
 }
+
 /*-----------------------------------*\
   #BAGIAN INDEX
 \*-----------------------------------*/
